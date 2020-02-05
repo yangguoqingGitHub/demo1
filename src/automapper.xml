@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace<resultMap type="cn.pojo." id="stuMap">
+  <id property="id" column="id"/>
+  <result property="" column=""/>
+<result property="" column=""/>
+<result property="" column=""/>
+<result property="" column=""/>
+</resultMap>
+<insert id="add" parameterType="cn.pojo.">
+insert into shopping(jname,money,kucun,phot) values(#{jname},#{money},#{kucun},#{phot})
+</insert>
+<update id="updat" parameterType="cn.pojo.">
+update shopping set money=#{money},kucun=#{kucun},phot=#{phot} where jname=#{jname}
+</update>
+<delete id="del" parameterType="String">
+delete from shopping where jname=#{jname}
+</delete>
+<select id="showall" resultType="cn.pojo.">
+select * from shopping
+</select>
+<select id="findMaxrows" resultType="int">
+select count(*) from shopping
+</select>
+<select id="findPageAll" resultType="cn.pojo." parameterType="cn.pojo.">
+select * from shopping limit #{page},#{rows}
+</select>
+<select id="showpageall" resultType="cn.pojo." parameterType="cn.pojo.">
+select * from shopping limit #{page},#{rows}
+</select>
+<update id="aupdae" parameterType="cn.pojo.">
+update shopping set kucun=#{kucun} where jname=#{jname}
+</update>
+</mapper>
